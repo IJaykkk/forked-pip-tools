@@ -22,7 +22,7 @@ $ pip-flatten [--unsorted] <reqfile> [output]
 
 Takes a single requirements file, and expands it.
 Essential when working with included files.
-
+Will potentially support blacklisting modules (wsgiref, distribute, setuptools).
 
 Possible Future Commands
 ---
