@@ -36,15 +36,15 @@ class Requirements(object):
 
         with open(reqfile) as f:
             data = []
-
             for line in f:
                 line = line.strip()
 
                 if not any([line.startswith(p) for p in IGNORABLE_LINES]):
                     data.append(line)
 
-            for requirement in parse_requirements(data):
-                self.requirements.append(requirement)
+        for requirement in parse_requirements(data):
+            self.requirements.append(requirement)
+
 
     def diff(self, requirements, ignore_versions=False):
         r1 = self
