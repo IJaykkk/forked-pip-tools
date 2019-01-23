@@ -15,8 +15,8 @@ import os
 from docopt import docopt
 from pkg_resources import parse_requirements
 
-# TODO: ignore lines
-IGNORABLE_LINES = '#', '-r'
+IGNORABLE_LINES = ('#', '-r')
+VERSION_OPERATORS = ('==', '>=', '<=', '>', '<', ',')
 
 class Requirements(object):
     def __init__(self, reqfile=None):
@@ -45,8 +45,6 @@ class Requirements(object):
 
             for requirement in parse_requirements(data):
                 self.requirements.append(requirement)
-
-        pass
 
     def diff(self, requirements, ignore_versions=False):
         r1 = self
